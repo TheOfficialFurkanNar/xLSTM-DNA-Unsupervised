@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "streaming": false,
+    "name": "dnagpt/human_genome_GCF_009914755.1",
+    "train_samples": 50000,
+    "test_samples": 10000
+  },
+  "model": {
+    "vocab_size": 5,
+    "embedding_dim": 64,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.3
+  },
+  "training": {
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "gradient_clip_max_norm": 1.0
+  },
+  "data": {
+    "seq_length": 200,
+    "encoding": {
+      "A": 0,
+      "C": 1,
+      "G": 2,
+      "T": 3,
+      "N": 4
+    }
+  },
+  "checkpoint": {
+    "epochs": [5, 10, 15, 20]
+  },
+  "output": {
+    "weights_file": "xlstm_weights.safetensors",
+    "plots_dir": "."
+  }
+}
